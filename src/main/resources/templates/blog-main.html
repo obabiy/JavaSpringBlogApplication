@@ -11,6 +11,28 @@
 
 <div class="container mt-5">
     <h1>Site's blog</h1>
+
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div th:each="post : ${posts}">
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-5" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 th:text="${post.title}" class="card-title"/>
+                                <p th:text="${post.anons}" class="card-text"/>
+                                <a th:href="'/blog/' + ${post.id}" class="btn btn-primary">More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <footer th:insert="blocks/footer :: footer"></footer>
